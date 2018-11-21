@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-ssr",
+  "version": "1.0.0",
+  "description": "Call asyncdata function in children components in the NuxtJS framework",
+  "author": {
+    "name": "Alex Khrulev",
+    "email": "lexuses@gmail.com"
+  },
+  "license": "MIT License",
+  "keywords": [
+    "nuxt",
+    "ssr",
+    "asyncdata"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "nuxt": "2.3.x"
+  }
+}
