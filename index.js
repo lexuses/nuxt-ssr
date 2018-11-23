@@ -25,7 +25,9 @@ const StoreModule = {
 const ChildMixin = {
   created() {
     let storedData = this.$store.getters['ssr/getComponent'](this.$options._scopeId);
-    this._data = { ...this._data, ...storedData};
+    for (let key in storedData) {
+      this[key] = storedData[key];
+    }
   }
 };
 
