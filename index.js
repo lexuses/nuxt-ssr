@@ -24,7 +24,7 @@ const StoreModule = {
 
 const ChildMixin = {
   created() {
-    let storedData = this.$store.getters['ssr/getComponent'](this.$options._scopeId);
+    let storedData = this.$store.getters['ssr/getComponent'](this.$options.__file);
     for (let key in storedData) {
       this[key] = storedData[key];
     }
@@ -37,7 +37,7 @@ function getComponents(component) {
     return descendants;
   }
   Object.keys(component.components).forEach((child) => {
-    if (!component.components[child]._scopeId) {
+    if (!component.components[child].__file) {
       return;
     }
 
@@ -57,7 +57,7 @@ const RootMixin = {
       if (component.asyncData && typeof component.asyncData === 'function') {
         let componentData = await component.asyncData(context);
         context.store.dispatch('ssr/setComponentData', {
-          id: component._scopeId,
+          id: component.__file,
           data: componentData
         });
       }

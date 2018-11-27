@@ -1,6 +1,6 @@
 {
   "name": "nuxt-ssr",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Call asyncdata function in children components in the NuxtJS framework",
   "author": {
     "name": "Alex Khrulev",
